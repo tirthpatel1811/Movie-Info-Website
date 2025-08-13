@@ -1,0 +1,167 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-bg: #0a0c10;
+    --secondary-bg: #1a1d24;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --accent-color: #d4a373;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --font-title: 'Cinzel', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* General Body and Container styles remain the same */
+body {
+    font-family: var(--font-body);
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- Homepage Specific Styles --- */
+.site-header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.site-header h1 {
+    font-family: var(--font-title);
+    font-size: 3.5rem;
+    color: var(--accent-color);
+}
+
+.site-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.movie-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.movie-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: #fff;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px var(--shadow-color);
+}
+
+.movie-card img {
+    max-width:var(--max-width) ;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+
+
+.movie-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    text-align: center;
+}
+
+.movie-card-overlay h3 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+}
+
+/* --- Movie Detail Page Styles --- */
+/* Banner, Synopsis, Cast, Reviews, and Footer styles remain largely the same */
+.banner {
+    position: relative;
+    height: 200vh; /* Change this value to 100vh */
+    background-size: cover;
+    background-position: center;
+}
+/* ... (rest of banner styles) ... */
+
+.main-nav {
+    background-color: #000;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* ... (rest of the styles for cast, reviews, etc.) ... */
+/* --- Cast Section --- */
+.cast-grid {
+    display: grid;
+    /* Creates a responsive grid that fits as many 180px columns as possible */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+}
+
+.cast-card {
+    background-color: var(--secondary-bg); /* Dark, slightly off-black background */
+    border-radius: 12px; /* Rounded corners */
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 8px 20px var(--shadow-color); /* Creates depth */
+    /* Smooth transition for the hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cast-card:hover {
+    transform: translateY(-10px); /* Lifts the card up on hover */
+    box-shadow: 0 12px 30px var(--shadow-color); /* Increases the shadow for more depth */
+}
+
+.cast-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Prevents the image from stretching */
+    border: 3px solid var(--accent-color); /* Adds a colored border */
+    margin-bottom: 15px;
+}
+
+.cast-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.cast-card p {
+    color: var(--text-secondary); /* A lighter grey for the character name */
+}
